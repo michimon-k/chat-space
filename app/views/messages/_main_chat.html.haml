@@ -1,0 +1,25 @@
+.body__main
+  .body__main__main-header
+    .body__main__main-header__left
+      %p.body__main__main-header__left__current-group
+        michi
+      %ul.body__main__main-header__left__member-list
+        Member:
+        %li hoge
+
+    = link_to "#", class: "body__main__main-header__edit" do      
+      Edit
+    
+  .body__main__main-message
+
+  .body__main__main-form
+    %form.body__main__main-form__input-box
+      %input{type: "text", class: "body__main__main-form__input-box__text", placeholder: "type a message"}
+      %label{class: "body__main__main-form__input-box__image"}
+        =icon('fas', 'image')
+        %input{type:"file", class:"body__main__main-form__input-box__image__file"}
+    %input{type:"submit",class:"body__main__main-form__submit-btn",value:"Send"}
+
+
+
+
