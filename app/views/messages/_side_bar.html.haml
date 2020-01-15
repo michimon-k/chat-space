@@ -1,0 +1,30 @@
+.body__side
+  .body__side__side-header
+    .body__side__side-header__box
+      %p.body__side__side-header__box__username
+      hoge
+      %ul.body__side__side-header__box__menu
+        %li.body__side__side-header__box__menu__new-group
+          = link_to "#"  do
+            = icon('fas','cog')
+        %li.body__side__side-header__box__menu__edit-account
+          =link_to "#"  do
+            = icon('fas','edit')
+      
+  .body__side__side-groups
+    %a{ :href=> '#'}
+    .body__side__side-groups__group
+      %p.body__side__side-groups__group__name
+        michi
+      
+      %p.body__side__side-groups__group__latest-message
+        まだメッセージがありません
+    %a{ :href=> '#'}
+    .body__side__side-groups__group
+      %p.body__side__side-groups__group__name
+        masa
+      
+      %p.body__side__side-groups__group__latest-message
+        おはよう
+
+
