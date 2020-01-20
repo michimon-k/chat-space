@@ -7,26 +7,27 @@
         Member:
         %li hoge
 
-    = link_to "#", class: "body__main__main-header__edit" do      
+    = link_to edit_group_path(current_user), class: "body__main__main-header__edit" do      
       Edit
     
-  .body__main__main-messages
-    .body__main__main-messages__message
-      .body__main__main-messages__message__name
-        masa
-        .body__main__main-messages__message__name__date
-          2020/01/01(wed) 17:00:00
-      .body__main__main-messages__message
-        おはよう！
+  .body__main__messages
+    = render @messages
 
-  .body__main__main-form
-    %form.body__main__main-form__input-box
-      %input{type: "text", class: "body__main__main-form__input-box__text", placeholder: "type a message"}
-      %label{class: "body__main__main-form__input-box__image"}
-        =icon('fas', 'image')
-        %input{type:"file", class:"body__main__main-form__input-box__image__file"}
-    %input{type:"submit",class:"body__main__main-form__submit-btn",value:"Send"}
+  .body__main__form
+    = form_for [@group, @message] do |f| 
+      = f.text_field :content, class: 'input-box', placeholder: 'type a message'
+      .form-mask
+        = f.label :image, class: 'image' do
+          = icon('fas', 'image', class: 'icon')
+          = f.file_field :image, class: 'hidden'
+      = f.submit 'Send', class: 'form-submit'
 
-
+  -# .body__main__main-form
+  -#   %form.body__main__main-form__input-box
+  -#     %input{type: "text", class: "body__main__main-form__input-box__text", placeholder: "type a message"}
+  -#     %label{class: "body__main__main-form__input-box__image"}
+  -#       =icon('fas', 'image')
+  -#       %input{type:"file", class:"body__main__main-form__input-box__image__file"}
+  -#   %input{type:"submit",class:"body__main__main-form__submit-btn",value:"Send"}
 
 
