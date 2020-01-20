@@ -1,0 +1,33 @@
+.body__main__messages
+  .body__main__messages__upper-message
+    .body__main__messages__upper-message__user-name
+      = message.user.name
+    .body__main__messages__upper-message__date
+      = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
+  .body__main__messages__lower-message
+    - if message.content.present?
+      %p.body__main__messages__lower-message__content
+        = message.content
+    = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
+
+-#  .body__main
+-#   .body__main__message
+-#     .body__main__message__upper-message
+-#       .body__main__message__upper-message__user-name
+-#         = message.user.name
+-#       .body__main__message__upper-message__date
+-#         = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
+-#     .body__main__message__lower-message
+-#       - if message.content.present?
+-#         %p.body__main__message__lower-message
+-#           = message.content
+-#       = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
+
+-#         .body__main__main-messages
+-#       .body__main__main-messages__message
+-#         .body__main__main-messages__message__name
+-#           masa
+-#           .body__main__main-messages__message__name__date
+-#             2020/01/01(wed) 17:00:00
+-#         .body__main__main-messages__message
+-#           おはよう！
