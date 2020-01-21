@@ -2,12 +2,13 @@
   .body__main__main-header
     .body__main__main-header__left
       %p.body__main__main-header__left__current-group
-        michi
-      %ul.body__main__main-header__left__member-list
+        = @group.name
+        .body__main__main-header__left__member-list
         Member:
-        %li hoge
+        - @group.users.each do |user|
+          = user.name
 
-    = link_to edit_group_path(current_user), class: "body__main__main-header__edit" do      
+    = link_to edit_group_path(@group), class: "body__main__main-header__edit" do      
       Edit
     
   .body__main__messages
