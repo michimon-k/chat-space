@@ -11,7 +11,7 @@
     = link_to edit_group_path(@group), class: "body__main__main-header__edit" do      
       Edit
     
-  .body__main__messages
+  .messages
     = render @messages
 
   .body__main__form
@@ -22,13 +22,4 @@
           = icon('fas', 'image', class: 'icon')
           = f.file_field :image, class: 'hidden'
       = f.submit 'Send', class: 'form-submit'
-
-  -# .body__main__main-form
-  -#   %form.body__main__main-form__input-box
-  -#     %input{type: "text", class: "body__main__main-form__input-box__text", placeholder: "type a message"}
-  -#     %label{class: "body__main__main-form__input-box__image"}
-  -#       =icon('fas', 'image')
-  -#       %input{type:"file", class:"body__main__main-form__input-box__image__file"}
-  -#   %input{type:"submit",class:"body__main__main-form__submit-btn",value:"Send"}
-
 
