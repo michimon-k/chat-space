@@ -2,21 +2,21 @@
   .body__side__side-header
     .body__side__side-header__box
       %p.body__side__side-header__box__username
-        = current_user.name #path
+        = current_user.name 
       
       %ul.body__side__side-header__box__menu
         %li.body__side__side-header__box__menu__new-group
           = link_to new_group_path(current_user)  do
-            = icon('fas','edit', class:'icon') #path
+            = icon('fas','edit', class:'icon') 
         %li.body__side__side-header__box__menu__edit-account
           =link_to edit_user_path(current_user)  do
-            = icon('fas','cog', class:'icon') #path
+            = icon('fas','cog', class:'icon') 
       
   .body__side__side-groups
     - current_user.groups.each do |group|
       = link_to group_messages_path(group), class:"body__side__side-groups__group"  do
         .body__side__side-groups__group__name
-          = group.name #path
+          = group.name 
         .body__side__side-groups__group__latest-message
           = group.show_last_message
 -# .side-bar
